@@ -1,5 +1,6 @@
 # Check_Campaign_Google_Ads
-Check Campaign Settings Before Start (all comments are in russian by now, sorry)
+Check Campaign Settings Before Start Using Google Ads Scripts (JavaScript)
+(all comments are in russian by now, sorry)
 
 Check List for Google Ads (not all of it could be checked by script, I don't remember what exactly, sorry, I wrote it year and a half ago):
 
