@@ -579,12 +579,11 @@ function main() {
   //вводные параметры - ОБЯЗАТЕЛЬНО ЗАПОЛНИТЬ!
   var campaignName = 'US_SRCH_Test_Remove_EN';
   var type = '_SRCH_';
-  var finalUrl = 'https://www.semrush.com/test/';
+  var finalUrl = 'https://www.test.com/test/';
   //обязательно через =
   var label = '=Test';
   
   //пиши, в какой негатив-лист надо добавить нашу кампанию; по умолчанию - Trash;
-  //доступные названия: 'SEOs', 'Backlinks', 'OTI', 'PPC Tool', 'Display Ads', 'Social Media Tracker', 'Traffic Analytics'
   var negativeKeywordList = 'Trash';
   
   //меняем также тут!
