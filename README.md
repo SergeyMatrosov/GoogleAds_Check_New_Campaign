@@ -1,4 +1,4 @@
-# Check_Campaign_Google_Ads
+# Google_Ads_Check_New_Campaign
 Check Campaign Settings Before Start Using Google Ads Scripts (JavaScript)
 (all comments are in russian by now, sorry)
 
