@@ -3,25 +3,20 @@
 function putLabel(labelName, AdObject, labelCounterToString) {
   	     if (labelCounterToString === undefined) {
              labelCounterToString = '';
-         }
-  
-  		 var mergeLabels = labelName + labelCounterToString;
-  
-         var labelIter = AdWordsApp.labels().withCondition('Name = ' + mergeLabels).get();
-         if (!labelIter.hasNext()) {
-             var labelBuilder = AdWordsApp.createLabel(mergeLabels);
-             //var newLabelIter = AdWordsApp.labels().withCondition('Name = ' + labelBuilder).get();
-            // while(newLabelIter.hasNext()){
-             //var newLabel =  newLabelIter.next().getName();
-              //Logger.log(newLabel);
-             var postLabel = AdObject.applyLabel(mergeLabels);
-            //}
+	     }
+
+	     var mergeLabels = labelName + labelCounterToString;
+
+	     var labelIter = AdWordsApp.labels().withCondition('Name = ' + mergeLabels).get();
+	     if (!labelIter.hasNext()) {
+		 var labelBuilder = AdWordsApp.createLabel(mergeLabels);
+		 var postLabel = AdObject.applyLabel(mergeLabels);
 		 } else {
-             var label = labelIter.next().getName();
-             var postLabel = AdObject.applyLabel(label);
-             Logger.log(label);
-         }
-  		return  mergeLabels;
+		     var label = labelIter.next().getName();
+		     var postLabel = AdObject.applyLabel(label);
+		     Logger.log(label);
+		 }
+	    return  mergeLabels;
 }
 
 //удаление лишних строк и колонок в доп. листах
@@ -231,7 +226,7 @@ function deviceAdjCheck(campaignName, campaignForCheck) {
                 var tabletAdjMaker = campaignForCheck.targeting().platforms().tablet().get().next().setBidModifier(1.0);
                 var desktopAdjMaker = campaignForCheck.targeting().platforms().desktop().get().next().setBidModifier(1.0);
            
-           		return;
+           	return;
             } 
   
         var mobileAdjMaker = campaignForCheck.targeting().platforms().mobile().get().next().setBidModifier(1.0);
@@ -462,45 +457,47 @@ function siteLinkChecker(campaignForCheck, campaignName, label, defaultNetwork, 
   		Logger.log('');
     	var siteLinkBuilder = AdWordsApp.extensions().newSitelinkBuilder();
     	var firstSiteLink = siteLinkBuilder
-     						.withLinkText('Domain vs Domain')
-    						.withDescription1('Compare Domains by Keywords')
-        					.withDescription2('Identify common & unique keywords!')
-        					.withFinalUrl('https://www.semrush.com/info/domain_vs_domain/')
-        					.withTrackingTemplate('{lpurl}?kw=Sitelink_Domain_vs_Domain&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
+     						.withLinkText('SiteLink1')
+    						.withDescription1('Description1')
+        					.withDescription2('Description2')
+        					.withFinalUrl('https://www.test.com/link1/')
+        					.withTrackingTemplate('{lpurl}?kw=SiteLink1&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
         					.build()
         					.getResult();
     
     	var secondSiteLink = siteLinkBuilder
-     						.withLinkText('Blog')
-    						.withDescription1('Hot Digital Marketing Topics')
-        					.withDescription2('SEO, PPC, Content, PR, SMM & more!')
-        					.withFinalUrl('https://www.semrush.com/blog/')
-        					.withTrackingTemplate('{lpurl}?kw=Sitelink_Blog&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
+     						.withLinkText('SiteLink2')
+    						.withDescription1('Description1')
+        					.withDescription2('Description2')
+        					.withFinalUrl('https://www.test.com/link2/')
+        					.withTrackingTemplate('{lpurl}?kw=Sitelink2&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
         					.build()
         					.getResult();
     
-   		var thirdSiteLink = siteLinkBuilder
-     						.withLinkText('Plans and Prices')
-        					.withFinalUrl('https://www.semrush.com/prices/')
-        					.withTrackingTemplate('{lpurl}?kw=Sitelink_Plans_and_Prices&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
+   	var thirdSiteLink = siteLinkBuilder
+     						.withLinkText('SiteLink3')
+						.withDescription1('Description1')
+						.withDescription1('Description2')
+        					.withFinalUrl('https://www.test.com/link3/')
+        					.withTrackingTemplate('{lpurl}?kw=Sitelink3&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
         					.build()
         					.getResult();
     
     	var fouthSiteLink = siteLinkBuilder
-     						.withLinkText('Ranking factors research')
-    						.withDescription1('SEO Ranking Factors 2.0 by SEMrush')
-        					.withDescription2('5 new factors added and more!')
-        					.withFinalUrl('https://www.semrush.com/ranking-factors/')
-        					.withTrackingTemplate('{lpurl}?kw=Sitelink_Ranking_factors&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
+     						.withLinkText('SiteLink4')
+    						.withDescription1('Description1')
+        					.withDescription2('Description2')
+        					.withFinalUrl('https://www.test.com/link4/')
+        					.withTrackingTemplate('{lpurl}?kw=Sitelink4&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
         					.build()
         					.getResult();
     
     	var fifthSiteLink = siteLinkBuilder
-     						.withLinkText('Free Webinars')
-    						.withDescription1('Watch one of our free webinars and')
-        					.withDescription2('begin to improve your SEO results!')
-        					.withFinalUrl('https://www.semrush.com/webinars/')
-        					.withTrackingTemplate('{lpurl}?kw=Sitelink_Free_Webinars&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
+     						.withLinkText('SiteLink5')
+    						.withDescription1('Description1')
+        					.withDescription2('Description2')
+        					.withFinalUrl('https://www.test.com/link5/')
+        					.withTrackingTemplate('{lpurl}?kw=Sitelink5&cmp=' + campaignName + '&label' + label + defaultNetwork + defaultDevice)
         					.build()
         					.getResult();
     
@@ -518,25 +515,25 @@ function calloutChecker(campaignForCheck) {
         }
     	Logger.log('Коллауты не обнаружены. Применяю универсальные');
   
-  		//здесь можно и нужно сделать универсальные для всех кампании коллауты.
+  	//здесь можно и нужно сделать универсальные для всех кампании коллауты.
     	var calloutBuilder = AdWordsApp.extensions().newCalloutBuilder();
     	var	firstCallout = calloutBuilder
-    					   .withText('450+ million domains')
+    					   .withText('Callout1')
     					   .build()
     					   .getResult();
     
     	var	secondCallout = calloutBuilder
-    					   .withText('Best SEO Tool 2017 Winner')
+    					   .withText('Callout2')
     					   .build()
     					   .getResult();
     
     	var	thirdCallout = calloutBuilder
-    					   .withText('140+ geo databases')
+    					   .withText('Callout3')
     					   .build()
     					   .getResult();
     
     	var	fouthCallout = calloutBuilder
-    					   .withText('2.5+ million users')
+    					   .withText('Callout4')
     					   .build()
     					   .getResult();
     
@@ -577,6 +574,11 @@ function addNegativeList (campaignForCheck, negativeKeywordList) {
 function main() {
   
   //вводные параметры - ОБЯЗАТЕЛЬНО ЗАПОЛНИТЬ!
+  //Скажем, у нас название US_SRCH_Test_Remove_EN
+  //US - локаль
+  //SRCH - тип кампании (поиск)
+  //Test_Remove - название кампании
+  //EN - таргетинг по языку
   var campaignName = 'US_SRCH_Test_Remove_EN';
   var type = '_SRCH_';
   var finalUrl = 'https://www.test.com/test/';
