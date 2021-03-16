@@ -1,8 +1,8 @@
 # Google_Ads_Check_New_Campaign
-Check Campaign Settings Before Start Using Google Ads Scripts (JavaScript)
+It checks campaign settings before start (using Goolge Ads scripts)
 (all comments are in russian by now, sorry)
 
-Check List for Google Ads (not all of it could be checked by script, I don't remember what exactly, sorry, I wrote it year and a half ago):
+Checklist for Google Ads (not all of it could be checked by script, I don't remember what exactly, sorry, I wrote it year and a half ago):
 
 I. Campaign Level
 1. Network
